@@ -1,0 +1,17 @@
+postgresql
+
+//ユーザーの作成
+create role root login
+encrypted password 'root'
+nosuperuser inherit nocreatedb nocreaterole noreplication;
+
+
+//データベースの作成
+create database meetingroom
+with owner = root
+encoding = 'UTF-8'
+tablespace = pg_default
+lc_collate = 'C'
+lc_ctype = 'C'
+template = template0
+connection limit = -1;
